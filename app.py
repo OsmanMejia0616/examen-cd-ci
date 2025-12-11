@@ -17,9 +17,11 @@ tasks = [
 @app.route('/')
 def home():
     return jsonify({
+        "status": "ok",
         "message": "API de Tareas - Examen GitHub Actions",
         "environment": app.config['ENV_MODE']
-    })
+    }), 200
+
 
 @app.route('/health')
 def health():
